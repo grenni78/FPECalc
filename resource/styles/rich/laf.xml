@@ -1,0 +1,274 @@
+<synth>
+  <defaultsProperty key="cornerResizeOffset" type="integer" value="70" />
+  
+  <object id="TextShadow" class="de.grenni.laf.rich.TextShadow"/>
+  <object id="gradientPainter" class="de.grenni.laf.rich.GradientPainter"/>
+  
+  <!-- ##################### Defaults für alle Stile ####################### -->
+  
+  <style id="BakingStyle">
+  	<font name="Verdana" size="12"/>
+    <state>
+		<color value="#F8F8F8" type="BACKGROUND"/>
+	</state>
+  </style>
+  <bind style="BakingStyle" type="REGION" key=".*"/>
+
+  <!-- ##################### JButton ####################### -->
+  
+  <style id="ButtonStyle">
+	<insets top="5" left="12" right="12" bottom="5"/>
+
+	<state>
+		<color value="#FFFFFF" type="TEXT_FOREGROUND" />
+		<color value="#FFFFFF" type="FOREGROUND" />
+	
+		<graphicsUtils idref="TextShadow"/>
+
+		<property key="labelStyle.shadowBlur" type="integer" value="3"/>
+		<property key="labelStyle.shadowOpacity" type="integer" value="100"/>
+		<property key="labelStyle.shadowColor" type="string" value="#000000"/>
+		<property key="labelStyle.shadowOffsetX" type="integer" value="0"/>
+		<property key="labelStyle.shadowOffsetY" type="integer" value="0"/>
+    
+		<imagePainter method="buttonBackground" path="/styles/rich/images/button_up.png"
+			sourceInsets="10 10 10 10"/>
+	 </state>
+	 <state value="PRESSED">
+	  <imagePainter method="buttonBackground" path="/styles/rich/images/button_down.png"
+		sourceInsets="10 10 10 10"/>
+    </state>
+  </style>
+  <bind style="ButtonStyle" type="region" key="button"/>
+ 
+  <!-- ##################### Buttons des Accordions ####################### -->
+  
+  <style id="JAccordionBarButton">
+    <insets top="5" left="12" right="12" bottom="5" />
+	<font name="Verdana" size="14" style="BOLD" />
+	<state>
+		<color value="#FFFFFF" type="TEXT_FOREGROUND" />
+		<color value="#FFFFFF" type="FOREGROUND" />
+	</state>
+  </style>
+  <bind style="JAccordionBarButton" type="name" key="JAccordionBarButton" />
+  
+  <!-- ##################### Exit - Button der Titelleiste ####################### -->
+  
+  <style id="exitButton">
+    <opaque value="true" />
+    <state>
+		<imageIcon id="exitButton.icon" path="/styles/rich/images/exit.png"/>
+		<property key="Button.icon" value="exitButton.icon"/>
+		<property key="Button.contentAreaFilled" type="boolean" value="false" />
+	
+		<insets top="0" left="10" bottom="0" right="10" />
+	</state>
+  </style>
+  <bind style="exitButton" type="name" key="exitButton" />
+  
+  <!-- ##################### Minimize - Button  der Titelleiste ####################### -->
+
+  <style id="minimizeButton">
+    <opaque value="true" />
+    <state>
+		<imageIcon id="minimizeButton.icon" path="/styles/rich/images/minimize.png"/>
+		<property key="Button.icon" value="minimizeButton.icon"/>
+		<property key="Button.contentAreaFilled" type="boolean" value="false" />
+	
+		<insets top="0" left="0" bottom="0" right="0" />
+	</state>
+  </style>
+  <bind style="minimizeButton" type="name" key="minimizeButton" />
+  
+  <!-- ##################### ArrowButton ####################### -->
+  
+  <style id="arrowStyle">
+ 
+    <property key="ArrowButton.size" type="integer" value="20" />
+
+	<imagePainter method="arrowButtonForeground" path="/styles/rich/images/sbi_ver_inc.png"
+		sourceInsets="0 0 0 0" stretch="false" direction="north" />
+	<imagePainter method="arrowButtonForeground" path="/styles/rich/images/sbi_ver_dec.png"
+		sourceInsets="0 0 0 0" stretch="false" direction="south" />
+	<imagePainter method="arrowButtonForeground" path="/styles/rich/images/sbi_hor_dec.png"
+		sourceInsets="0 0 0 0" stretch="false" direction="west" />
+	<imagePainter method="arrowButtonForeground" path="/styles/rich/images/sbi_hor_inc.png"
+		sourceInsets="0 0 0 0" stretch="false" direction="east" />
+  </style>
+  <bind style="arrowStyle" type="region" key="Arrowbutton" />
+  
+  <!-- ##################### ArrowButton der ComboBox ####################### -->
+  
+  <style id="comboArrowStyle">
+	<imagePainter method="arrowButtonForeground" path="/styles/rich/images/comboboxArrow.png"
+		sourceInsets="0 0 0 0" stretch="false" direction="south"/>
+  </style>
+  <bind style="comboArrowStyle" type="name" key="ComboBox.arrowButton" />
+  
+  <!-- ##################### RadioButton ####################### -->
+  
+  <style id="RadioButtonStyle">
+    <opaque value="true" />
+	
+	<imageIcon id="RadioButton.icon" path="/styles/rich/images/radio_button.png" />
+	<property key="RadioButton.icon" value="RadioButton.icon" />
+	<state>
+		<color value="#333333" type="TEXT_FOREGROUND"/>
+		<color value="#333333" type="FOREGROUND"/>
+	</state>
+	<state value="SELECTED">
+		<color value="#333333" type="TEXT_FOREGROUND"/>
+		<imageIcon id="RadioButton.icon.checked" path="/styles/rich/images/radio_button_checked.png" />
+		<property key="RadioButton.icon" value="RadioButton.icon.checked" />
+	</state>
+	<state value="DISABLED">
+		<color value="#999999" type="TEXT_FOREGROUND"/>
+	</state>
+	<state value="MOUSE_OVER">
+		<color value="#444444" type="TEXT_FOREGROUND"/>
+	</state>
+  </style>
+  <bind style="RadioButtonStyle" type="REGION" key="RadioButton" />
+  
+  <!-- ##################### ScrollBar generell ####################### -->
+  
+  <style id="scrollBarStyle">
+	<property key="ScrollBar.thumbHeight" type="integer" value="20" />
+	<property key="ScrollBar.minimumThumbSize" type="Dimension" value="20 20" />
+  </style>
+  <bind style="scrollBarStyle" type="REGION" key="ScrollBar" />
+  
+  <!-- ##################### ScrollBar Track ####################### -->
+  
+  <style id="scrollbarTrackStyle">
+	<state>
+		<imagePainter method="scrollBarTrackBackground" path="/styles/rich/images/trackBar_hor.png"
+			direction="horizontal" sourceInsets="0 16 0 16" />
+        <imagePainter method="scrollBarTrackBackground" path="/styles/rich/images/trackBar.png"
+			direction="vertical" sourceInsets="16 0 16 0" />
+    </state>
+    <state value="DISABLED">
+        <imagePainter method="scrollBarTrackBackground" path="/styles/rich/images/trackBar_hor.png"
+			direction="horizontal" sourceInsets="0 16 0 16" />
+        <imagePainter method="scrollBarTrackBackground" path="/styles/rich/images/trackBar.png"
+			direction="vertical" sourceInsets="16 0 16 0" />
+    </state>
+  </style>
+  <bind style="scrollbarTrackStyle" type="REGION" key="ScrollBarTrack" />
+
+  <!-- ##################### ScrollBar Griff ####################### -->
+  
+  <style id="scrollBarThumbStyle">
+    <state>
+        <imagePainter method="scrollBarThumbBackground" direction="horizontal" path="/styles/rich/images/thumb_hor.png"
+			sourceInsets="0 18 0 18" />
+        <imagePainter method="scrollBarThumbBackground" direction="vertical" path="/styles/rich/images/thumb.png"
+			sourceInsets="18 0 18 0" />
+    </state>
+    <state value="MOUSE_OVER">
+        <imagePainter method="scrollBarThumbBackground" direction="horizontal" path="/styles/rich/images/thumb_hor-mouseover.png"
+			sourceInsets="0 18 0 18" />
+        <imagePainter method="scrollBarThumbBackground" direction="vertical" path="/styles/rich/images/thumb-mouseover.png"
+			sourceInsets="18 0 18 0" />
+    </state>
+    <state value="DISABLED">
+    </state>
+  </style>
+  <bind style="scrollBarThumbStyle" type="REGION" key="ScrollBarThumb" />
+
+  <!-- ##################### Label innerhalb der Pannels ####################### -->
+  
+  <style id="PanelLabel">
+	<state>
+		<opaque value="true" />
+		<color value="#333333" type="TEXT_FOREGROUND"/>
+		<color value="#333333" type="FOREGROUND"/>
+	</state>
+  </style>
+  <bind style="PanelLabel" type="name" key="PanelLabel" />
+
+  <!-- ##################### FormattedTextField ####################### -->
+  
+  <style id="FormattedTextField">
+    <insets left="3" top="0" right="2" bottom="0" />
+	<state>
+		<color value="#333333" type="TEXT_FOREGROUND"/>
+		<color value="#333333" type="FOREGROUND"/>
+		<color value="#888888" type="BACKGROUND"/>
+		<imagePainter method="FormattedTextFieldBackground" path="/styles/rich/images/text_field2.png"
+			sourceInsets="4 4 4 4" />
+	</state>
+	<state value="DISABLED">
+		<color value="#999999" type="TEXT_FOREGROUND"/>
+		<color value="#999999" type="FOREGROUND"/>
+	</state>
+  </style>
+  <bind style="FormattedTextField" type="region" key="FormattedTextField" />
+  
+  <!-- ##################### Titelleiste ####################### -->
+  
+  <style id="titlebarContainer">
+	<insets top="10" left="44" right="20" bottom="12" />
+	<state>
+		
+		<imagePainter method="PanelBackground" path="/styles/rich/images/titlebar.png"
+			sourceInsets="0 63 0 64" />
+	</state>
+  </style>
+  <bind style="titlebarContainer" type="name" key="titlebarContainer" />
+  
+  <!-- ##################### Text-Schatten der Titelleiste ####################### -->
+  
+  <style id="titlebar">
+	<insets top="0" left="0" right="0" bottom="0" />
+	<state>
+		<graphicsUtils idref="TextShadow"/>
+		
+		<property key="labelStyle.shadowBlur" type="integer" value="5"/>
+		<property key="labelStyle.shadowOpacity" type="integer" value="100"/>
+		<property key="labelStyle.shadowColor" type="string" value="#000000"/>
+		<property key="labelStyle.shadowOffsetX" type="integer" value="0"/>
+		<property key="labelStyle.shadowOffsetY" type="integer" value="0"/>
+		
+		<font name="Verdana" size="20"/>
+		<color value="#FFFFFF" type="TEXT_FOREGROUND"/>
+		<color value="#FFFFFF" type="FOREGROUND"/>
+	</state>
+  </style>
+  <bind style="titlebar" type="name" key="titlebar" />
+  
+  <!-- ##################### Fläche, die die Panels aufnimmt ####################### -->
+  
+  <style id="roundedEdgePanel">
+	<insets top="15" left="20" bottom="10" right="16" />
+	
+	<imagePainter method="PanelBackground" path="/styles/rich/images/roundedEdgePanel.png"
+		sourceInsets="21 22 35 28" />
+  
+  </style>
+  <bind style="roundedEdgePanel" type="name" key="roundedEdgePanel" />
+  
+  <!-- ##################### Hauptfenster ####################### -->
+  
+  <style id="mainframe">
+	<state>
+		<insets top="12" left="7" right="19" bottom="41"/>
+		<property key="gradientColors" type="String" value="#CACACA,#E5E5E5,#838383" />
+		<property key="gradientFractions" type="String" value="0,50,100" />
+		<property key="cornerRadius" type="Integer" value="120" />
+		<object class="java.awt.Insets" id="insets">
+			<int>10</int>
+			<int>10</int>
+			<int>40</int>
+			<int>33</int>
+		</object>
+		<property key="insets" value="insets" type="idref"/>
+		<imagePainter method="RootPaneBorder" path="/styles/rich/images/mainframe_border.png"
+			sourceInsets="70 70 79 89" />
+		<painter method="RootPaneBackground" idref="gradientPainter" />
+	</state>
+  </style>
+  <bind style="mainframe" type="REGION" key="RootPane" />
+  
+</synth>

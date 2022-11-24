@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpec version="0.5">
+	<settings>
+		<language>de-DE</language>
+		<kh>
+			<mode>KE</mode>
+			<factor type="float">0.5</factor>
+		</kh>
+		<fp>
+			<factor type="float">0.5</factor>
+		</fp>
+		<userDataLocation>APP_DIR</userDataLocation>
+	</settings>
+	<appearance>
+		<mainWindow>
+		</mainWindow>
+		<titlebar>	
+			<bgGradientEnd type="string">#D3D3D4</bgGradientEnd>
+			<bgGradientStart type="string">#B4B4B5</bgGradientStart>
+			<color type="string">#FFFFFF</color>
+			<fontsize type="int">20</fontsize>
+		</titlebar>
+		<panels>
+			<FPECPanelSettings>
+				<keColor type="string">#2222FF</keColor>
+				<beColor type="string">#00EE00</beColor>
+			</FPECPanelSettings>
+		</panels>
+		<accordion>
+		</accordion>
+	</appearance>
+	<panels>
+		<array>
+			<item>FPECPanelIntro</item>					
+			<item>FPECPanelSettings</item>
+			<item>FPECPanelNutritions</item>
+		</array>
+	</panels>
+</fpec>

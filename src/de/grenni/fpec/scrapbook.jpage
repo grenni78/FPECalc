@@ -1,0 +1,5 @@
+Pattern pattern = Pattern.compile("\\[([0-9]+)\\]");
+				Matcher matcher = pattern.matcher("[99]  .98");
+				
+				System.out.println(matcher.groupCount());				while (matcher.find()) {
+					System.out.println(matcher.group(1));				}				String test = "abc.cde.def";System.out.println(test.substring(0,test.lastIndexOf(".")));
